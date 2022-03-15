@@ -1,0 +1,42 @@
+
+.input-group:not(.has-validation)>.dropdown-toggle:nth-last-child(n+3), 
+.input-group:not(.has-validation)>:not(:last-child):not(.dropdown-toggle):not(.dropdown-menu) {
+    border-top-right-radius: 0.25rem;
+    border-bottom-right-radius: 0.25rem;
+
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+
+.input-group>:not(:first-child):not(.dropdown-menu):not(.valid-tooltip):not(.valid-feedback):not(.invalid-tooltip):not(.invalid-feedback) {
+    margin-left: -1px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+
+    border-top-left-radius: 0.25rem;
+    border-bottom-left-radius: 0.25rem;
+}
+
+.dropdown-toggle::after {
+    margin-right: 0.255em;
+}
+
+.sidebar-widget.video-courses .price-status .course-details .course-item-child {
+    margin-right: auto;
+    margin-left: 0;
+  }
+
+  .nav-tabs .nav-item {
+      margin-left: 30px;
+      margin-right: 0;
+  }
+
+  .login-area {
+    margin-right: auto;
+    margin-left: 0;
+ }
+
+ .login-area .dropdown-menu {
+    right: auto;
+    left: 0;
+}
