@@ -8,19 +8,21 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Bus\Dispatchable;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Queue\SerializesModels;
+use App\Mail\ScoreResultMail;
+use Mail;
 
 class SendScoreResultJob implements ShouldQueue
 {
     use Dispatchable, InteractsWithQueue, Queueable, SerializesModels;
-
+    protected $details;
     /**
      * Create a new job instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($details)
     {
-        //
+        $this->details =  $details;
     }
 
     /**
@@ -30,6 +32,7 @@ class SendScoreResultJob implements ShouldQueue
      */
     public function handle()
     {
-        //
+        $scoreMail = new ScoreResultMail($this->details);
+        Mail::to($this->details->user->email)->send($scoreMail);
     }
 }

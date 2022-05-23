@@ -6,7 +6,7 @@
 
   <div class="swiper-wrapper">
     @foreach ($sliders as $slider)
-    <div class="swiper-slide carousel-item-a intro-item bg-image" style="background-image: url({{ $slider->slider_image[0] }})">
+    <div class="swiper-slide carousel-item-a intro-item bg-image" style="background-image: url({{ $slider->slider_image[0] }}) ">
       <div class="overlay overlay-a"></div>
       <div class="intro-content display-table">
         <div class="table-cell">
@@ -193,9 +193,7 @@
 <div class="row">
 <div class="col-lg-6 col-md-6 col-sm-6">
 <div class="single-funfacts-box">
-<h3>
-  <span class="target">100%</span>
-</h3>
+  <h3><span class="odometer" data-count="100">00</span>%</h3>
 <p>Finished Sessions</p>
 </div>
 </div>

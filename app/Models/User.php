@@ -68,9 +68,9 @@ class User extends Authenticatable implements HasMedia
     {
         $interests = array();
 
-        foreach ($this->interests as $interest)
+        foreach ($this->courses as $interest)
         {
-            array_push($interests, $interest->interest);
+            array_push($interests, $interest->name);
         }
 
         return $interests;
@@ -86,10 +86,7 @@ class User extends Authenticatable implements HasMedia
     	return $this->belongsTo(Country::class);
     }
 
-    public function interests()
-    {
-    	return $this->hasMany(UserInterest::class);
-    }
+    
 
     public function exams()
     {
@@ -110,5 +107,11 @@ class User extends Authenticatable implements HasMedia
     public function scores()
     {
         return $this->hasMany(ScoreResult::class);
+    }
+
+    public function courses()
+    {
+        return $this->belongsToMany(Course::class,'user_interests','user_id','interest')
+                ->withTimestamps();
     }
 }

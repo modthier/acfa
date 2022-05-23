@@ -35,6 +35,7 @@ use App\Http\Controllers\Admin\NewsController as AdminNewsController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('sendMail',[HomeController::class,'sendExamMail']);
 
 Route::group(
     [
@@ -70,7 +71,9 @@ Route::group(
 
     Route::post('examResult',[ExamResultsController::class,'store'])->name('store.exam.result');
     Route::get('/test-mail',[SubscriptionController::class,'testMail']);
+    Route::get('/scoremail',[SubscriptionController::class,'scoremail']);
     Route::get('/sitemap',[HomeController::class,'sitemap']);
+
 
      
 

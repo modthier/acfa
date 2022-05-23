@@ -3,6 +3,8 @@
 @slot('header')
 @component('mail::header', ['url' => config('app.url')])
 {{ config('app.name') }}
+<br>
+<img src="https://i.ibb.co/LtqZH47/image-1.png" class="logo" alt="Acfa">
 @endcomponent
 @endslot
 

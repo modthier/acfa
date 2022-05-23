@@ -2,7 +2,7 @@
 <td class="header">
 <a href="{{ $url }}" style="display: inline-block;">
 @if (trim($slot) === 'Laravel')
-<img src="{{ asset('assets/icons/apple-icon-114x114.png') }}" class="logo" alt="Acfa">
+<img src="https://i.ibb.co/LtqZH47/image-1.png" class="logo" alt="Acfa">
 @else
 {{ $slot }}
 @endif

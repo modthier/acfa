@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Subscription;
 use Illuminate\Http\Request;
 use App\Events\NewCourseSubscription;
+use App\Models\ScoreResult;
+use App\Jobs\SendScoreResultJob;
 
 class SubscriptionController extends Controller
 {
@@ -88,5 +90,11 @@ class SubscriptionController extends Controller
     {
         $sub =  Subscription::findOrFail(3);
         event(new NewCourseSubscription($sub));
+    }
+
+    public function scoremail()
+    {
+       $score = ScoreResult::findOrFail(2);
+       SendScoreResultJob::dispatch($score);
     }
 }

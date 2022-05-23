@@ -60,6 +60,12 @@ class Course extends Model implements HasMedia , TranslatableContract
     {
         return $this->morphMany(Subscription::class, 'subscriptionable');
     }
+
+    public function users()
+    {
+        return $this->belongsToMany(user::class,'user_interests','interest','user_id')
+                ->withTimestamps();
+    }
 }
 
 
